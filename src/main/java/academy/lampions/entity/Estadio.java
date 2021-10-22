@@ -16,7 +16,7 @@ import javax.persistence.GenerationType;
 @NoArgsConstructor
 @AllArgsConstructor(access=AccessLevel.PRIVATE)
 @Entity
-public class Jogador {
+public class Estadio {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private int Id;
@@ -24,8 +24,7 @@ public class Jogador {
     @Column(nullable=false)
     private String Nome;
 
-    @Column(nullable=false)
-    private int NumeroCamisa;
-
-    private String Posicao;
+    private String Local;
+    private int Capacidade;
+    
 }
