@@ -42,6 +42,6 @@ public class Time {
     @JoinColumn(name="estadio_id")
     private Estadio estadio;
 
-    @OneToMany(mappedBy = "Time")
+    @OneToMany(mappedBy = "time")
     private List<Jogador> jogador = new ArrayList<>();   
 }
