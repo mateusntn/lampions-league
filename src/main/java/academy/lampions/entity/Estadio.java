@@ -3,6 +3,7 @@ package academy.lampions.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToOne;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
@@ -19,12 +20,14 @@ import javax.persistence.GenerationType;
 public class Estadio {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private int Id;
+    private int id;
 
     @Column(nullable=false)
-    private String Nome;
+    private String nome;
 
-    private String Local;
-    private int Capacidade;
+    private String local;
+    private int capacidade;
     
+    @OneToOne(mappedBy = "estadio")
+    private Time time;
 }
