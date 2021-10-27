@@ -25,23 +25,23 @@ import javax.persistence.GenerationType;
 public class Time {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private int id;
+    private Integer id;
 
     @Column(nullable=false)
     private String nome;
 
     private LocalDate dataFundacao;
-    private int titulos;
+    private Integer titulos;
     private String escudo;
-    private int pontos;
-    private int vitorias;
-    private int empates;
-    private int derrotas;
+    private Integer pontos;
+    private Integer vitorias;
+    private Integer empates;
+    private Integer derrotas;
 
     @OneToOne
     @JoinColumn(name="estadio_id")
     private Estadio estadio;
 
     @OneToMany(mappedBy = "time")
-    private List<Jogador> jogador = new ArrayList<>();   
+    private List<Jogador> jogador = new ArrayList<>();
 }

@@ -20,13 +20,13 @@ import javax.persistence.GenerationType;
 public class Estadio {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private int id;
+    private Integer id;
 
     @Column(nullable=false)
     private String nome;
 
     private String local;
-    private int capacidade;
+    private Integer capacidade;
     
     @OneToOne(mappedBy = "estadio")
     private Time time;

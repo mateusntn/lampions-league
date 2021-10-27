@@ -21,13 +21,13 @@ import javax.persistence.GenerationType;
 public class Jogador {
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
-    private int id;
+    private Integer id;
 
     @Column(nullable=false)
     private String nome;
 
     @Column(nullable=false)
-    private int numeroCamisa;
+    private Integer numeroCamisa;
 
     private String posicao;
 
