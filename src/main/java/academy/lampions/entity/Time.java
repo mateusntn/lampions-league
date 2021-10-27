@@ -44,4 +44,17 @@ public class Time {
 
     @OneToMany(mappedBy = "time")
     private List<Jogador> jogador = new ArrayList<>();
+
+    public Time(Time time) {
+        super();
+        this.id = time.getId();
+        this.nome = time.getNome();
+        this.dataFundacao = time.getDataFundacao();
+        this.titulos = time.getTitulos();
+        this.escudo = time.getEscudo();
+        this.pontos = time.getPontos();
+        this.vitorias = time.getVitorias();
+        this.empates = time.getEmpates();
+        this.derrotas = time.getDerrotas();      
+    }    
 }
