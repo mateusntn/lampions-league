@@ -39,7 +39,11 @@ public class TimeService {
         time.setVitorias(novoTime.getVitorias() != null ? novoTime.getVitorias() : time.getVitorias());
         time.setEmpates(novoTime.getEmpates() != null ? novoTime.getEmpates() : time.getEmpates());
         time.setDerrotas(novoTime.getDerrotas() != null ? novoTime.getDerrotas() : time.getDerrotas());
-        
+
         return repository.save(time);
+    }
+
+    public void delete(Integer id) {
+        repository.deleteById(id);
     }
 }
