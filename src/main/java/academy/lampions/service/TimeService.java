@@ -22,4 +22,9 @@ public class TimeService {
         Optional<Time> time = repository.findById(id);
         return time.orElse(null);
     }
+
+    public Time create(Time time) {
+        time.setId(null);
+        return repository.save(time);
+    }
 }

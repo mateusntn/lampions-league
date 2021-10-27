@@ -1,5 +1,6 @@
 package academy.lampions.controller;
 
+import java.net.URI;
 import java.util.List;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -7,8 +8,10 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
 import academy.lampions.entity.Time;
 import academy.lampions.service.TimeService;
@@ -19,15 +22,22 @@ public class TimeController {
     @Autowired
     private TimeService service;
 
-    @GetMapping(value = "/")
+    @GetMapping()
     public ResponseEntity<List<Time>> getAll() {
-        List<Time> time = service.findAll();
-        return ResponseEntity.ok().body(time);
+        List<Time> times = service.findAll();
+        return ResponseEntity.ok().body(times);
     }
 
     @GetMapping(value = "/{id}")
     public ResponseEntity<Time> getById(@PathVariable int id) {
         Time time = service.findById(id);
         return ResponseEntity.ok().body(time);
+    }
+
+    @PostMapping()
+    public ResponseEntity<Time> post(@RequestBody Time time) {
+        service.create(time);
+        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(time.getId()).toUri();
+        return ResponseEntity.created(uri).build();
     }
 }
