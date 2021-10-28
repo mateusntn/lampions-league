@@ -33,5 +33,13 @@ public class Estadio implements Serializable {
     private Integer capacidade;
     
     @OneToOne(mappedBy = "estadio")
-    private Time time;    
+    private Time time;   
+    
+    public Estadio(Estadio estadio) {
+        super();
+        this.id = estadio.getId();
+        this.nome = estadio.getNome();
+        this.local = estadio.getLocal();
+        this.capacidade = estadio.getCapacidade();
+    }
 }

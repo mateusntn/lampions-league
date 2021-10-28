@@ -6,7 +6,6 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import academy.lampions.dto.JogadorDTO;
 import academy.lampions.entity.Jogador;
 import academy.lampions.repository.JogadorRepository;
 
@@ -29,7 +28,7 @@ public class JogadorService {
         return repository.save(jogador);
     }
 
-    public Jogador update(Integer id, JogadorDTO novoJogador) {
+    public Jogador update(Integer id, Jogador novoJogador) {
         Jogador jogador = findById(id);
 
         jogador.setNome(novoJogador.getNome() != null ? novoJogador.getNome() : jogador.getNome());

@@ -6,7 +6,6 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import academy.lampions.dto.TimeDTO;
 import academy.lampions.entity.Time;
 import academy.lampions.repository.TimeRepository;
 
@@ -29,7 +28,7 @@ public class TimeService {
         return repository.save(time);
     }
 
-    public Time update(Integer id, TimeDTO novoTime) {
+    public Time update(Integer id, Time novoTime) {
         Time time = findById(id);
 
         time.setNome(novoTime.getNome() != null ? novoTime.getNome() : time.getNome());

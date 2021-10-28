@@ -2,7 +2,7 @@ package academy.lampions.controller;
 
 import java.net.URI;
 import java.util.List;
-import java.util.stream.Collectors;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import academy.lampions.dto.JogadorDTO;
 import academy.lampions.entity.Jogador;
 import academy.lampions.service.JogadorService;
 
@@ -27,10 +26,9 @@ public class JogadorController {
     private JogadorService service;
 
     @GetMapping()
-    public ResponseEntity<List<JogadorDTO>> getAll() {
+    public ResponseEntity<List<Jogador>> getAll() {
         List<Jogador> jogadores = service.findAll();
-        List<JogadorDTO> jogadoresDto = jogadores.stream().map(obj -> new JogadorDTO(obj)).collect(Collectors.toList());
-        return ResponseEntity.ok().body(jogadoresDto);
+        return ResponseEntity.ok().body(jogadores);
     }
 
     @GetMapping(value = "/{id}")
@@ -47,9 +45,9 @@ public class JogadorController {
     }
 
     @PutMapping(value = "/{id}")
-    public ResponseEntity<JogadorDTO> update(@PathVariable Integer id, @RequestBody JogadorDTO jogador) {
+    public ResponseEntity<Jogador> update(@PathVariable Integer id, @RequestBody Jogador jogador) {
         Jogador novoJogador = service.update(id, jogador);
-        return ResponseEntity.ok().body(new JogadorDTO(novoJogador));
+        return ResponseEntity.ok().body(novoJogador);
     }
 
     @DeleteMapping(value = "/{id}")

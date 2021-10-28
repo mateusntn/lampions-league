@@ -2,7 +2,7 @@ package academy.lampions.controller;
 
 import java.net.URI;
 import java.util.List;
-import java.util.stream.Collectors;
+
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import academy.lampions.dto.EstadioDTO;
 import academy.lampions.entity.Estadio;
 import academy.lampions.service.EstadioService;
 
@@ -29,10 +28,9 @@ public class EstadioController {
     private EstadioService service;
 
     @GetMapping()
-    public ResponseEntity<List<EstadioDTO>> getAll() {
+    public ResponseEntity<List<Estadio>> getAll() {
         List<Estadio> estadios = service.findAll();
-        List<EstadioDTO> estadiosDTO = estadios.stream().map(obj -> new EstadioDTO(obj)).collect(Collectors.toList());
-        return ResponseEntity.ok().body(estadiosDTO);
+        return ResponseEntity.ok().body(estadios);
     }
 
     @GetMapping(value = "/{id}")
@@ -49,9 +47,9 @@ public class EstadioController {
     }
 
     @PutMapping(value = "/{id}")
-    public ResponseEntity<EstadioDTO> update(@PathVariable Integer id, @RequestBody EstadioDTO estadio) {
+    public ResponseEntity<Estadio> update(@PathVariable Integer id, @RequestBody Estadio estadio) {
         Estadio novoEstadio = service.update(id, estadio);
-        return ResponseEntity.ok().body(new EstadioDTO(novoEstadio));
+        return ResponseEntity.ok().body(novoEstadio);
     }
 
     @DeleteMapping(value = "/{id}")
