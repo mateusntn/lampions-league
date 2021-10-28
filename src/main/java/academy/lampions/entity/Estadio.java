@@ -18,6 +18,7 @@ import javax.persistence.GenerationType;
 @AllArgsConstructor(access=AccessLevel.PRIVATE)
 @Entity
 public class Estadio {
+    
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
@@ -30,4 +31,12 @@ public class Estadio {
     
     @OneToOne(mappedBy = "estadio")
     private Time time;
+
+    public Estadio(Estadio estadio){
+    super();
+    this.id = estadio.getId();
+    this.nome = estadio.getNome();
+    this.local = estadio.getLocal();
+    this.capacidade = estadio.getCapacidade();      
+    }    
 }
