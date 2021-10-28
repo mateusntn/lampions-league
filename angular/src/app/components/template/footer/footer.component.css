@@ -1,0 +1,15 @@
+.footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 0;
+    margin: 0;
+    bottom: 0;
+    background-image: url("../../../../assets/img/wallpaper.png");
+    position: fixed;
+}
+
+img {
+    justify-content: center;
+    align-items: center;
+    width: 500px;
+}
