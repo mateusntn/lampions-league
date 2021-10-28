@@ -4,14 +4,14 @@ import java.io.Serializable;
 import java.time.LocalDate;
 
 import academy.lampions.entity.Time;
-import lombok.AccessLevel;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-@AllArgsConstructor(access=AccessLevel.PRIVATE)
+@AllArgsConstructor
 public class TimeDTO implements Serializable {
     private static final long serialVersionUID = 1L;
 

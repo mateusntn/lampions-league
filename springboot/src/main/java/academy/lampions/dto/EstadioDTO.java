@@ -3,14 +3,14 @@ package academy.lampions.dto;
 import java.io.Serializable;
 
 import academy.lampions.entity.Estadio;
-import lombok.AccessLevel;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-@AllArgsConstructor(access=AccessLevel.PRIVATE)
+@AllArgsConstructor
 public class EstadioDTO implements Serializable {
     private static final long serialVersionUID = 1L;
 

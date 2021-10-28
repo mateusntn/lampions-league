@@ -1,5 +1,7 @@
 package academy.lampions.entity;
 
+import java.io.Serializable;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
@@ -8,16 +10,17 @@ import javax.persistence.OneToOne;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.Data;
-import lombok.AccessLevel;
+
 
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 
 @Data
 @NoArgsConstructor
-@AllArgsConstructor(access=AccessLevel.PRIVATE)
+@AllArgsConstructor
 @Entity
-public class Estadio {
+public class Estadio implements Serializable {
+    private static final long serialVersionUID = 1L;
     
     @Id
     @GeneratedValue(strategy=GenerationType.AUTO)
