@@ -33,13 +33,5 @@ public class Jogador {
 
     @ManyToOne
     @JoinColumn(name="time_id")
-    private Time time;
-
-    public Jogador(Jogador jogador) {
-        super();
-        this.id = jogador.getId();
-        this.nome = jogador.getNome();
-        this.numeroCamisa = jogador.getNumeroCamisa();
-        this.posicao = jogador.getPosicao();
-    }   
+    private Time time;   
 }

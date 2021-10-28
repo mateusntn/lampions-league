@@ -6,6 +6,7 @@ import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import academy.lampions.dto.EstadioDTO;
 import academy.lampions.entity.Estadio;
 import academy.lampions.repository.EstadioRepository;
 
@@ -28,7 +29,7 @@ public class EstadioService {
         return repository.save(estadio);
     }
 
-    public Estadio update(Integer id, Estadio novoEstadio) {
+    public Estadio update(Integer id, EstadioDTO novoEstadio) {
         Estadio estadio = findById(id);
 
         estadio.setNome(novoEstadio.getNome() != null ? novoEstadio.getNome() : estadio.getNome());

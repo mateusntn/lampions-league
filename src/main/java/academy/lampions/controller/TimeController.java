@@ -2,6 +2,7 @@ package academy.lampions.controller;
 
 import java.net.URI;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import academy.lampions.dto.TimeDTO;
 import academy.lampions.entity.Time;
 import academy.lampions.service.TimeService;
 
@@ -25,9 +27,10 @@ public class TimeController {
     private TimeService service;
 
     @GetMapping()
-    public ResponseEntity<List<Time>> getAll() {
+    public ResponseEntity<List<TimeDTO>> getAll() {
         List<Time> times = service.findAll();
-        return ResponseEntity.ok().body(times);
+        List<TimeDTO> timesDTO = times.stream().map(obj -> new TimeDTO(obj)).collect(Collectors.toList());
+        return ResponseEntity.ok().body(timesDTO);
     }
 
     @GetMapping(value = "/{id}")
@@ -44,9 +47,9 @@ public class TimeController {
     }
 
     @PutMapping(value = "/{id}")
-    public ResponseEntity<Time> update(@PathVariable Integer id, @RequestBody Time time) {
+    public ResponseEntity<TimeDTO> update(@PathVariable Integer id, @RequestBody TimeDTO time) {
         Time novoTime = service.update(id, time);
-        return ResponseEntity.ok().body(new Time(novoTime));
+        return ResponseEntity.ok().body(new TimeDTO(novoTime));
     }
 
     @DeleteMapping(value = "/{id}")
