@@ -5,19 +5,20 @@ import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
 import javax.persistence.OneToOne;
+import javax.validation.constraints.NotEmpty;
 
-import lombok.NoArgsConstructor;
+import org.hibernate.validator.constraints.Length;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
-
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
+import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
@@ -30,7 +31,9 @@ public class Time implements Serializable {
     @GeneratedValue(strategy=GenerationType.IDENTITY)
     private Integer id;
 
-    @Column(nullable=false)
+    
+    @NotEmpty(message = "É obrigatório informar um nome!")
+    @Length(min = 3, max = 45, message = "O nome deve ter no mínimo 3 e no máximo 45 caracteres")
     private String nome;
 
     private LocalDate dataFundacao;

@@ -3,6 +3,7 @@ package academy.lampions.controller;
 import java.net.URI;
 import java.util.List;
 
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -40,14 +41,14 @@ public class EstadioController {
     }
 
     @PostMapping()
-    public ResponseEntity<Estadio> post(@RequestBody Estadio estadio) {
+    public ResponseEntity<Estadio> post(@Valid @RequestBody Estadio estadio) {
         service.create(estadio);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(estadio.getId()).toUri();
         return ResponseEntity.created(uri).build();
     }
 
     @PutMapping(value = "/{id}")
-    public ResponseEntity<Estadio> update(@PathVariable Integer id, @RequestBody Estadio estadio) {
+    public ResponseEntity<Estadio> update(@Valid @PathVariable Integer id, @RequestBody Estadio estadio) {
         Estadio novoEstadio = service.update(id, estadio);
         return ResponseEntity.ok().body(novoEstadio);
     }

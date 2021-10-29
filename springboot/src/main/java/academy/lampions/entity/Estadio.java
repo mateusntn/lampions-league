@@ -2,10 +2,12 @@ package academy.lampions.entity;
 
 import java.io.Serializable;
 
-import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.OneToOne;
+import javax.validation.constraints.NotEmpty;
+
+import org.hibernate.validator.constraints.Length;
 
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
@@ -26,7 +28,9 @@ public class Estadio implements Serializable {
     @GeneratedValue(strategy=GenerationType.AUTO)
     private Integer id;
 
-    @Column(nullable=false)
+    
+    @NotEmpty(message = "É obrigatório informar um nome!")
+    @Length(min = 3, max = 45, message = "O nome deve ter no mínimo 3 e no máximo 45 caracteres")
     private String nome;
 
     private String local;

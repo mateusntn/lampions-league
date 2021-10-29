@@ -3,6 +3,7 @@ package academy.lampions.controller;
 import java.net.URI;
 import java.util.List;
 
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -25,7 +26,7 @@ public class JogadorController {
     @Autowired
     private JogadorService service;
 
-    @GetMapping()
+    @GetMapping
     public ResponseEntity<List<Jogador>> getAll() {
         List<Jogador> jogadores = service.findAll();
         return ResponseEntity.ok().body(jogadores);
@@ -37,15 +38,15 @@ public class JogadorController {
         return ResponseEntity.ok().body(jogador);
     }
 
-    @PostMapping()
-    public ResponseEntity<Jogador> post(@RequestBody Jogador jogador) {
+    @PostMapping
+    public ResponseEntity<Jogador> post(@Valid @RequestBody Jogador jogador) {
         service.create(jogador);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(jogador.getId()).toUri();
         return ResponseEntity.created(uri).build();
     }
 
     @PutMapping(value = "/{id}")
-    public ResponseEntity<Jogador> update(@PathVariable Integer id, @RequestBody Jogador jogador) {
+    public ResponseEntity<Jogador> update(@Valid @PathVariable Integer id, @RequestBody Jogador jogador) {
         Jogador novoJogador = service.update(id, jogador);
         return ResponseEntity.ok().body(novoJogador);
     }

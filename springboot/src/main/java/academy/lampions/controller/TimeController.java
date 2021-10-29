@@ -3,6 +3,7 @@ package academy.lampions.controller;
 import java.net.URI;
 import java.util.List;
 
+import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -38,14 +39,14 @@ public class TimeController {
     }
 
     @PostMapping()
-    public ResponseEntity<Time> post(@RequestBody Time time) {
+    public ResponseEntity<Time> post(@Valid @RequestBody Time time) {
         service.create(time);
         URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(time.getId()).toUri();
         return ResponseEntity.created(uri).build();
     }
 
     @PutMapping(value = "/{id}")
-    public ResponseEntity<Time> update(@PathVariable Integer id, @RequestBody Time time) {
+    public ResponseEntity<Time> update(@Valid @PathVariable Integer id, @RequestBody Time time) {
         Time novoTime = service.update(id, time);
         return ResponseEntity.ok().body(novoTime);
     }
