@@ -3,6 +3,8 @@ package academy.lampions.entity;
 import java.io.Serializable;
 
 import javax.persistence.Entity;
+import javax.persistence.EnumType;
+import javax.persistence.Enumerated;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.ManyToOne;
@@ -12,6 +14,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 
 import org.hibernate.validator.constraints.Length;
 
+import academy.lampions.entity.enums.PositionEnum;
 import lombok.AllArgsConstructor;
 import lombok.NoArgsConstructor;
 import lombok.Data;
@@ -37,7 +40,8 @@ public class Player implements Serializable{
 
     private Integer shirtNumber;
 
-    private String position;
+    @Enumerated(value = EnumType.STRING)
+    private PositionEnum position;
 
     @JsonIgnore
     @ManyToOne
