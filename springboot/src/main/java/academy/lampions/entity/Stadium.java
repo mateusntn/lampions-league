@@ -21,7 +21,7 @@ import javax.persistence.GenerationType;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Estadio implements Serializable {
+public class Stadium implements Serializable {
     private static final long serialVersionUID = 1L;
     
     @Id
@@ -31,19 +31,19 @@ public class Estadio implements Serializable {
     
     @NotEmpty(message = "É obrigatório informar um nome!")
     @Length(min = 3, max = 45, message = "O nome deve ter no mínimo 3 e no máximo 45 caracteres")
-    private String nome;
+    private String name;
 
     private String local;
-    private Integer capacidade;
+    private Integer capacity;
     
     @OneToOne(mappedBy = "estadio")
-    private Time time;   
+    private Team team;   
     
-    public Estadio(Estadio estadio) {
+    public Stadium(Stadium estadio) {
         super();
         this.id = estadio.getId();
-        this.nome = estadio.getNome();
+        this.name = estadio.getName();
         this.local = estadio.getLocal();
-        this.capacidade = estadio.getCapacidade();
+        this.capacity = estadio.getCapacity();
     }
 }

@@ -17,38 +17,38 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import academy.lampions.entity.Time;
-import academy.lampions.service.TimeService;
+import academy.lampions.entity.Team;
+import academy.lampions.service.TeamService;
 
 @RestController
-@RequestMapping(value = "/time")
-public class TimeController {
+@RequestMapping(value = "/team")
+public class TeamController {
     @Autowired
-    private TimeService service;
+    private TeamService service;
 
     @GetMapping()
-    public ResponseEntity<List<Time>> getAll() {
-        List<Time> times = service.findAll();
-        return ResponseEntity.ok().body(times);
+    public ResponseEntity<List<Team>> getAll() {
+        List<Team> teams = service.findAll();
+        return ResponseEntity.ok().body(teams);
     }
 
     @GetMapping(value = "/{id}")
-    public ResponseEntity<Time> getById(@PathVariable Integer id) {
-        Time time = service.findById(id);
-        return ResponseEntity.ok().body(time);
+    public ResponseEntity<Team> getById(@PathVariable Integer id) {
+        Team team = service.findById(id);
+        return ResponseEntity.ok().body(team);
     }
 
     @PostMapping()
-    public ResponseEntity<Time> post(@Valid @RequestBody Time time) {
-        service.create(time);
-        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(time.getId()).toUri();
+    public ResponseEntity<Team> post(@Valid @RequestBody Team team) {
+        service.create(team);
+        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(team.getId()).toUri();
         return ResponseEntity.created(uri).build();
     }
 
     @PutMapping(value = "/{id}")
-    public ResponseEntity<Time> update(@Valid @PathVariable Integer id, @RequestBody Time time) {
-        Time novoTime = service.update(id, time);
-        return ResponseEntity.ok().body(novoTime);
+    public ResponseEntity<Team> update(@Valid @PathVariable Integer id, @RequestBody Team team) {
+        Team newTeam = service.update(id, team);
+        return ResponseEntity.ok().body(newTeam);
     }
 
     @DeleteMapping(value = "/{id}")

@@ -24,7 +24,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Time implements Serializable {
+public class Team implements Serializable {
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -34,33 +34,33 @@ public class Time implements Serializable {
     
     @NotEmpty(message = "É obrigatório informar um nome!")
     @Length(min = 3, max = 45, message = "O nome deve ter no mínimo 3 e no máximo 45 caracteres")
-    private String nome;
+    private String name;
 
-    private LocalDate dataFundacao;
-    private Integer titulos;
-    private String escudo;
-    private Integer pontos;
-    private Integer vitorias;
-    private Integer empates;
-    private Integer derrotas;
+    private LocalDate foundationDate;
+    private Integer titles;
+    private String emblem;
+    private Integer points;
+    private Integer Victories;
+    private Integer draws;
+    private Integer defeats;
 
     @OneToOne
     @JoinColumn(name="estadio_id")
-    private Estadio estadio;
+    private Stadium estadio;
 
-    @OneToMany(mappedBy = "time")
-    private List<Jogador> jogador = new ArrayList<>();   
+    @OneToMany(mappedBy = "team")
+    private List<Player> player = new ArrayList<>();   
 
-    public Time(Time time) {
+    public Team(Team team) {
         super();
-        this.id = time.getId();
-        this.nome = time.getNome();
-        this.dataFundacao = time.getDataFundacao();
-        this.titulos = time.getTitulos();
-        this.escudo = time.getEscudo();
-        this.pontos = time.getPontos();
-        this.vitorias = time.getVitorias();
-        this.empates = time.getEmpates();
-        this.derrotas = time.getDerrotas();        
+        this.id = team.getId();
+        this.name = team.getName();
+        this.foundationDate = team.getFoundationDate();
+        this.titles = team.getTitles();
+        this.emblem = team.getEmblem();
+        this.points = team.getPoints();
+        this.Victories = team.getVictories();
+        this.draws = team.getDraws();
+        this.defeats = team.getDefeats();        
     }
 }

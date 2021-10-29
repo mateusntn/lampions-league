@@ -3,7 +3,7 @@ package academy.lampions.repository;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
-import academy.lampions.entity.Estadio;
+import academy.lampions.entity.Player;
 
 @Repository
-public interface EstadioRepository extends JpaRepository<Estadio, Integer> {}
+public interface PlayerRepository extends JpaRepository<Player, Integer> {}

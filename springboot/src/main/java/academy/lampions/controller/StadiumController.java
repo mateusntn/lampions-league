@@ -17,38 +17,40 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
-import academy.lampions.entity.Jogador;
-import academy.lampions.service.JogadorService;
+import academy.lampions.entity.Stadium;
+import academy.lampions.service.StadiumService;
+
+
 
 @RestController
-@RequestMapping(value = "/jogador")
-public class JogadorController {
+@RequestMapping(value = "/stadium")
+public class StadiumController {
     @Autowired
-    private JogadorService service;
+    private StadiumService service;
 
-    @GetMapping
-    public ResponseEntity<List<Jogador>> getAll() {
-        List<Jogador> jogadores = service.findAll();
-        return ResponseEntity.ok().body(jogadores);
+    @GetMapping()
+    public ResponseEntity<List<Stadium>> getAll() {
+        List<Stadium> stadiums = service.findAll();
+        return ResponseEntity.ok().body(stadiums);
     }
 
     @GetMapping(value = "/{id}")
-    public ResponseEntity<Jogador> getById(@PathVariable Integer id) {
-        Jogador jogador = service.findById(id);
-        return ResponseEntity.ok().body(jogador);
+    public ResponseEntity<Stadium> getById(@PathVariable Integer id) {
+        Stadium stadium = service.findById(id);
+        return ResponseEntity.ok().body(stadium);
     }
 
-    @PostMapping
-    public ResponseEntity<Jogador> post(@Valid @RequestBody Jogador jogador) {
-        service.create(jogador);
-        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(jogador.getId()).toUri();
+    @PostMapping()
+    public ResponseEntity<Stadium> post(@Valid @RequestBody Stadium stadium) {
+        service.create(stadium);
+        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(stadium.getId()).toUri();
         return ResponseEntity.created(uri).build();
     }
 
     @PutMapping(value = "/{id}")
-    public ResponseEntity<Jogador> update(@Valid @PathVariable Integer id, @RequestBody Jogador jogador) {
-        Jogador novoJogador = service.update(id, jogador);
-        return ResponseEntity.ok().body(novoJogador);
+    public ResponseEntity<Stadium> update(@Valid @PathVariable Integer id, @RequestBody Stadium stadium) {
+        Stadium newStadium = service.update(id, stadium);
+        return ResponseEntity.ok().body(newStadium);
     }
 
     @DeleteMapping(value = "/{id}")

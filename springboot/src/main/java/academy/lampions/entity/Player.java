@@ -24,7 +24,7 @@ import javax.persistence.GenerationType;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
-public class Jogador implements Serializable{
+public class Player implements Serializable{
     private static final long serialVersionUID = 1L;
 
     @Id
@@ -33,22 +33,22 @@ public class Jogador implements Serializable{
 
     @NotEmpty(message = "É obrigatório informar um nome!")
     @Length(min = 3, max = 45, message = "O nome deve ter no mínimo 3 e no máximo 45 caracteres")    
-    private String nome;
+    private String name;
 
-    private Integer numeroCamisa;
+    private Integer shirtNumber;
 
-    private String posicao;
+    private String position;
 
     @JsonIgnore
     @ManyToOne
-    @JoinColumn(name="time_id")
-    private Time time;   
+    @JoinColumn(name="team_id")
+    private Team team;   
 
-    public Jogador(Jogador jogador) {
+    public Player(Player player) {
         super();
-        this.id = jogador.getId();
-        this.nome = jogador.getNome();
-        this.numeroCamisa = jogador.getNumeroCamisa();
-        this.posicao = jogador.getPosicao();
+        this.id = player.getId();
+        this.name = player.getName();
+        this.shirtNumber = player.getShirtNumber();
+        this.position = player.getPosition();
     }
 }
