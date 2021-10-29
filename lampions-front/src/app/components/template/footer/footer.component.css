@@ -1,0 +1,11 @@
+.footer {
+    padding: 0;
+    bottom: 0;
+    background-image: url("../../../../assets/img/wallpaper.png");
+    position: fixed;
+}
+
+
+img {
+    width: 500px;
+}
