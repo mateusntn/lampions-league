@@ -19,8 +19,9 @@ nav {
     justify-content: center;
 }
 
-.menu a {
+.menu .action {
     margin: 0 20px;
+    color: #fff;
 }
 
 img {
