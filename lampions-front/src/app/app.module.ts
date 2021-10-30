@@ -9,10 +9,16 @@ import { HeaderComponent } from './components/template/header/header.component';
 
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {MatTableModule} from '@angular/material/table';
+import { MatButtonModule } from "@angular/material/button";
+import { MatInputModule } from "@angular/material/input";
+import { MatFormFieldModule } from "@angular/material/form-field";
+import { MatSnackBarModule } from "@angular/material/snack-bar";
+import { FormsModule } from '@angular/forms';
 
 import { FooterComponent } from './components/template/footer/footer.component';
 import { HomeComponent } from './components/views/home/home.component';
 import { TeamReadComponent } from './components/views/team/team-read/team-read.component';
+import { TeamCreateComponent } from './components/views/team/team-create/team-create.component';
 
 @NgModule({
   declarations: [
@@ -20,7 +26,8 @@ import { TeamReadComponent } from './components/views/team/team-read/team-read.c
     HeaderComponent,
     FooterComponent,
     HomeComponent,
-    TeamReadComponent
+    TeamReadComponent,
+    TeamCreateComponent
   ],
   imports: [
     BrowserModule,
@@ -28,7 +35,12 @@ import { TeamReadComponent } from './components/views/team/team-read/team-read.c
     BrowserAnimationsModule,
     MatToolbarModule,
     MatTableModule,
-    HttpClientModule
+    HttpClientModule,
+    MatButtonModule,
+    MatInputModule,
+    MatFormFieldModule,
+    MatSnackBarModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

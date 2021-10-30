@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Team } from '../team.model';
 import { TeamService } from '../team.service';
 
@@ -12,7 +13,7 @@ export class TeamReadComponent implements OnInit {
   displayedColumns: string[] = ['name', 'points', 'victories', 'draws', 'defeats' ];
   teams: Team[] = [];
 
-  constructor(private service: TeamService) { }
+  constructor(private service: TeamService, private router: Router) { }
 
   ngOnInit(): void {
     this.findAll();
@@ -24,6 +25,4 @@ export class TeamReadComponent implements OnInit {
       this.teams = response;
     });
   }
-
-  
 }
