@@ -13,3 +13,8 @@
     justify-content: space-around;
     align-items: center;
 }
+
+.table th {
+    padding-top: 15px;
+    font-size: 17px;
+}

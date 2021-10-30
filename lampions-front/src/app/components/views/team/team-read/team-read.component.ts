@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { Team } from '../team.model';
+import { TeamService } from '../team.service';
 
 @Component({
   selector: 'app-team-read',
@@ -7,10 +9,21 @@ import { Component, OnInit } from '@angular/core';
 })
 export class TeamReadComponent implements OnInit {
 
-  constructor() { }
+  displayedColumns: string[] = ['name', 'points', 'victories', 'draws', 'defeats' ];
+  teams: Team[] = [];
+
+  constructor(private service: TeamService) { }
 
   ngOnInit(): void {
+    this.findAll();
   }
 
-  displayedColumns: string[] = ['team', 'points', 'victories', 'draws', 'defeats' ];
+  findAll() {
+    this.service.findAll().subscribe((response) => {
+      console.log(response);
+      this.teams = response;
+    });
+  }
+
+  
 }
