@@ -22,6 +22,13 @@ nav {
 .menu .action {
     margin: 0 20px;
     color: #fff;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+.menu .action i {
+    margin-right: 5px;
 }
 
 img {
