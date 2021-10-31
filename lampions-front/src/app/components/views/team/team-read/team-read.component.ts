@@ -9,7 +9,6 @@ import { TeamService } from '../team.service';
   styleUrls: ['./team-read.component.css']
 })
 export class TeamReadComponent implements OnInit {
-
   displayedColumns: string[] = ['name', 'points', 'victories', 'draws', 'defeats', 'actions' ];
   teams: Team[] = [];
 
