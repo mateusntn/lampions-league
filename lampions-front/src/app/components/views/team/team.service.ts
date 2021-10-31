@@ -19,9 +19,19 @@ export class TeamService {
     return this.http.get<Team[]>(url)
   }
 
+  findById(id: Number): Observable<Team> {
+    const url = `${this.baseUrl}/team/${id}`
+    return this.http.get<Team>(url)
+  }
+
   create(team: Team): Observable<Team>{
     const url = `${this.baseUrl}/team`
     return this.http.post<Team>(url, team);
+  }
+
+  update(team: Team):Observable<void> {
+    const url = `${this.baseUrl}/team/${team.id}`
+    return this.http.put<void>(url, team)
   }
 
   message(str: String): void {

@@ -10,7 +10,7 @@ import { TeamService } from '../team.service';
 })
 export class TeamReadComponent implements OnInit {
 
-  displayedColumns: string[] = ['name', 'points', 'victories', 'draws', 'defeats' ];
+  displayedColumns: string[] = ['name', 'points', 'victories', 'draws', 'defeats', 'actions' ];
   teams: Team[] = [];
 
   constructor(private service: TeamService, private router: Router) { }

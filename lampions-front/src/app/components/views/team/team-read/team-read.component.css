@@ -25,3 +25,24 @@
     padding-top: 15px;
     font-size: 17px;
 }
+
+.mat-header {
+    width: 8rem !important;
+}
+
+.align-center {
+    text-align: right;
+}
+
+.edit {
+    color: rgb(206, 173, 24);
+}
+
+.delete {
+    color: rgb(228, 56, 56);
+    margin-left: .5rem;
+}
+
+.mat-header {
+    width: 5rem;
+}

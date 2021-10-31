@@ -1,0 +1,34 @@
+<form>
+  <h1>ATUALIZANDO TIME</h1>
+
+  <mat-form-field class="form">
+    <mat-label>Nome</mat-label>
+    <input matInput [(ngModel)]="team.name" type="text" name="name" placeholder="Ex. Senac F.C">
+  </mat-form-field>
+  <mat-form-field class="form">
+    <mat-label>Quantidade de Títulos</mat-label>
+    <input matInput [(ngModel)]="team.titles" type="number" name="titles">
+  </mat-form-field>
+  <mat-form-field class="form">
+    <mat-label>Pontos</mat-label>
+    <input matInput [(ngModel)]="team.points" type="number" name="points">
+  </mat-form-field>
+  <mat-form-field class="form">
+    <mat-label>Vitórias</mat-label>
+    <input matInput [(ngModel)]="team.victories" type="number" name="victories">
+  </mat-form-field>
+  <mat-form-field class="form">
+    <mat-label>Empates</mat-label>
+    <input matInput [(ngModel)]="team.draws" type="number" name="draws">
+  </mat-form-field>
+  <mat-form-field class="form">
+    <mat-label>Derrotas</mat-label>
+    <input matInput [(ngModel)]="team.defeats" type="number" name="defeats">
+  </mat-form-field>
+
+  <div class="buttons">
+    <button routerLink="/team" class="mat-elevation-z8" mat-stroked-button> VOLTAR </button>
+    <button  class="mat-elevation-z8" (click)="update()" mat-stroked-button style="background-color: #05c46b;"> CRIAR </button>
+  </div>
+
+</form>

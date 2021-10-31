@@ -14,11 +14,13 @@ import { MatInputModule } from "@angular/material/input";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatSnackBarModule } from "@angular/material/snack-bar";
 import { FormsModule } from '@angular/forms';
+import { MatSortModule } from "@angular/material/sort"
 
 import { FooterComponent } from './components/template/footer/footer.component';
 import { HomeComponent } from './components/views/home/home.component';
 import { TeamReadComponent } from './components/views/team/team-read/team-read.component';
 import { TeamCreateComponent } from './components/views/team/team-create/team-create.component';
+import { TeamUpdateComponent } from './components/views/team/team-update/team-update.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +29,8 @@ import { TeamCreateComponent } from './components/views/team/team-create/team-cr
     FooterComponent,
     HomeComponent,
     TeamReadComponent,
-    TeamCreateComponent
+    TeamCreateComponent,
+    TeamUpdateComponent
   ],
   imports: [
     BrowserModule,
@@ -40,7 +43,8 @@ import { TeamCreateComponent } from './components/views/team/team-create/team-cr
     MatInputModule,
     MatFormFieldModule,
     MatSnackBarModule,
-    FormsModule
+    FormsModule,
+    MatSortModule
   ],
   providers: [],
   bootstrap: [AppComponent]
