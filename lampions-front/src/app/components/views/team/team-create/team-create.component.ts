@@ -12,7 +12,6 @@ export class TeamCreateComponent implements OnInit {
 
   team: Team = {
     name: '',
-    foudationDate: '',
     titles: 0,
     emblem: '',
     points: 0,

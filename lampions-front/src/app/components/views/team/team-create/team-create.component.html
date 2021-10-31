@@ -6,10 +6,6 @@
     <input matInput [(ngModel)]="team.name" type="text" name="name" placeholder="Ex. Senac F.C">
   </mat-form-field>
   <mat-form-field class="form">
-    <mat-label>Data de Fundação</mat-label>
-    <input matInput [(ngModel)]="team.foudationDate" type="date" name="foudationDate">
-  </mat-form-field>
-  <mat-form-field class="form">
     <mat-label>Quantidade de Títulos</mat-label>
     <input matInput [(ngModel)]="team.titles" type="number" name="titles">
   </mat-form-field>
@@ -31,8 +27,8 @@
   </mat-form-field>
 
   <div class="buttons">
-    <button  class="mat-elevation-z8" (click)="create()" mat-stroked-button style="background-color: #05c46b;"> CRIAR </button>
     <button routerLink="/team" class="mat-elevation-z8" mat-stroked-button> VOLTAR </button>
+    <button  class="mat-elevation-z8" (click)="create()" mat-stroked-button style="background-color: #05c46b;"> CRIAR </button>
   </div>
 
 </form>
