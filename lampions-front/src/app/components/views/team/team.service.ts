@@ -29,6 +29,11 @@ export class TeamService {
     return this.http.post<Team>(url, team);
   }
 
+  delete(id: Number): Observable<void>{
+    const url = `${this.baseUrl}/team/${id}`
+    return this.http.delete<void>(url);
+  }
+
   update(team: Team):Observable<void> {
     const url = `${this.baseUrl}/team/${team.id}`
     return this.http.put<void>(url, team)

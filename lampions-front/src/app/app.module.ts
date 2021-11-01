@@ -15,6 +15,7 @@ import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatSnackBarModule } from "@angular/material/snack-bar";
 import { FormsModule } from '@angular/forms';
 import { MatSortModule } from "@angular/material/sort"
+import { MatDialogModule } from "@angular/material/dialog"
 
 import { FooterComponent } from './components/template/footer/footer.component';
 import { HomeComponent } from './components/views/home/home.component';
@@ -22,6 +23,7 @@ import { TeamReadComponent } from './components/views/team/team-read/team-read.c
 import { TeamCreateComponent } from './components/views/team/team-create/team-create.component';
 import { TeamUpdateComponent } from './components/views/team/team-update/team-update.component';
 import { TeamDetailsComponent } from './components/views/team/team-details/team-details.component';
+import { TeamDeleteComponent } from './components/views/team/team-delete/team-delete.component';
 
 @NgModule({
   declarations: [
@@ -32,7 +34,8 @@ import { TeamDetailsComponent } from './components/views/team/team-details/team-
     TeamReadComponent,
     TeamCreateComponent,
     TeamUpdateComponent,
-    TeamDetailsComponent
+    TeamDetailsComponent,
+    TeamDeleteComponent
   ],
   imports: [
     BrowserModule,
@@ -46,7 +49,8 @@ import { TeamDetailsComponent } from './components/views/team/team-details/team-
     MatFormFieldModule,
     MatSnackBarModule,
     FormsModule,
-    MatSortModule
+    MatSortModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

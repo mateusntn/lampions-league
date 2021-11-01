@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
+import { TeamDeleteComponent } from '../team-delete/team-delete.component';
 import { Team } from '../team.model';
 import { TeamService } from '../team.service';
 
@@ -20,7 +22,7 @@ export class TeamDetailsComponent implements OnInit {
     defeats: 0
   }
 
-  constructor(private service: TeamService, private router: Router, private route: ActivatedRoute) { }
+  constructor(private service: TeamService, private router: Router, private route: ActivatedRoute, public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.team.id = Number(this.route.snapshot.paramMap.get("id")!);
@@ -35,5 +37,16 @@ export class TeamDetailsComponent implements OnInit {
 
   edit(): void {
     this.router.navigate([`team/update/${this.team.id}`])
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(TeamDeleteComponent, {
+      width: '250px',
+      data: this.team.id
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.team = result;
+    });
   }
 }
