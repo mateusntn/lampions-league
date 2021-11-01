@@ -10,7 +10,7 @@
 
     <ng-container matColumnDef="name">
       <th mat-header-cell *matHeaderCellDef> Time </th>
-      <td mat-cell *matCellDef="let row"> {{ row.name }} </td>
+      <td mat-cell *matCellDef="let row"><img src="{{ row.emblem }}" alt="Emblema do time"> {{ row.name }} </td>
     </ng-container>
 
     <ng-container matColumnDef="points">
