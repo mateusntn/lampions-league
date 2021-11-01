@@ -27,8 +27,8 @@
   </mat-form-field>
 
   <div class="buttons">
-    <button routerLink="/team" class="mat-elevation-z8" mat-stroked-button> VOLTAR </button>
-    <button  class="mat-elevation-z8" (click)="update()" mat-stroked-button style="background-color: #05c46b;"> CRIAR </button>
+    <button routerLink="/team/details/{{ team.id }}" class="mat-elevation-z8" mat-stroked-button> VOLTAR </button>
+    <button  class="mat-elevation-z8" (click)="update()" mat-stroked-button style="background-color: #05c46b;"> ATUALIZAR </button>
   </div>
 
 </form>
