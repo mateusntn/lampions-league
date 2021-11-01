@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/views/home/home.component';
 import { TeamCreateComponent } from './components/views/team/team-create/team-create.component';
+import { TeamDetailsComponent } from './components/views/team/team-details/team-details.component';
 import { TeamReadComponent } from './components/views/team/team-read/team-read.component';
 import { TeamUpdateComponent } from './components/views/team/team-update/team-update.component';
 
@@ -13,6 +14,10 @@ const routes: Routes = [
   {
     path: "team",
     component: TeamReadComponent
+  },
+  {
+    path: "team/details/:id",
+    component: TeamDetailsComponent
   },
   {
     path: "team/create",

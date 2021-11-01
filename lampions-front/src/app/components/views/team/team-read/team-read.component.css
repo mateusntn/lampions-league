@@ -31,18 +31,13 @@
 }
 
 .align-center {
-    text-align: right;
-}
-
-.edit {
-    color: rgb(206, 173, 24);
-}
-
-.delete {
-    color: rgb(228, 56, 56);
-    margin-left: .5rem;
+    text-align: center;
 }
 
 .mat-header {
     width: 5rem;
+}
+
+.info {
+  color: teal;
 }

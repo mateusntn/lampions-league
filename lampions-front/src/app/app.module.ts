@@ -21,6 +21,7 @@ import { HomeComponent } from './components/views/home/home.component';
 import { TeamReadComponent } from './components/views/team/team-read/team-read.component';
 import { TeamCreateComponent } from './components/views/team/team-create/team-create.component';
 import { TeamUpdateComponent } from './components/views/team/team-update/team-update.component';
+import { TeamDetailsComponent } from './components/views/team/team-details/team-details.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +31,8 @@ import { TeamUpdateComponent } from './components/views/team/team-update/team-up
     HomeComponent,
     TeamReadComponent,
     TeamCreateComponent,
-    TeamUpdateComponent
+    TeamUpdateComponent,
+    TeamDetailsComponent
   ],
   imports: [
     BrowserModule,

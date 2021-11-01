@@ -1,0 +1,33 @@
+.container {
+  display: flex;
+  padding: 100px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 30px;
+}
+
+h2 {
+  margin-bottom: 0;
+}
+
+img {
+  width: 50px;
+  margin-right: 10px;
+}
+
+.header a{
+  margin-left: .5rem;
+  cursor: pointer;
+}
+
+.edit {
+  color: rgb(206, 173, 24);
+  
+}
+
+.delete {
+  color: rgb(228, 56, 56);
+}

@@ -1,0 +1,23 @@
+<div class="container">
+  <div class="team">
+    <div class="header">
+      <img src="assets/img/chapeu.png" alt="Emblema do time">
+      <h2>{{ team.name }}</h2>
+      <a class="edit" (click)="edit()">
+        <i class="material-icons">edit</i>
+      </a>
+      <a class="delete">
+        <i class="material-icons">delete</i>
+      </a>
+    </div>  
+    <ul>
+      <li>Pontos: {{ team.points }}</li>
+      <li>Vitórias: {{ team.victories }}</li>
+      <li>Empates: {{ team.draws }}</li>
+      <li>Derrotas: {{ team.defeats }}</li>
+    </ul>  
+  </div>
+  <div class="players">
+    
+  </div>
+</div>
