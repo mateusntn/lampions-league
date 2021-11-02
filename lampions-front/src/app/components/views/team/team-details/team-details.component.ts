@@ -41,6 +41,10 @@ export class TeamDetailsComponent implements OnInit {
     this.findPlayers()
   }
 
+  counter(i: Number) {
+    return new Array(i);
+  }
+
   findById(): void {
     this.service.findById(this.team.id!).subscribe((response) => {
       this.team = response;

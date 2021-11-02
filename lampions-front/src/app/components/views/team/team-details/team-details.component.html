@@ -2,20 +2,26 @@
   <div class="team">
     <div class="header">
       <img src="{{ team.emblem }}" alt="Emblema do time">
-      <h2>{{ team.name }}</h2>
+      <h1>{{ team.name }}</h1>
       <a class="edit" (click)="edit()">
         <i class="material-icons">edit</i>
       </a>
       <a class="delete" (click)="openDialog()">
         <i class="material-icons">delete</i>
       </a>
+    </div>
+    <div class="titles">      
+      <h2>Títulos: {{ team.titles }}</h2>
+      <div class="trophies">
+        <img *ngFor="let t of counter(team.titles)" src="assets\img\trophy.png" alt="Troféu">
+      </div>
     </div>  
-    <ul>
-      <li>Pontos: {{ team.points }}</li>
-      <li>Vitórias: {{ team.victories }}</li>
-      <li>Empates: {{ team.draws }}</li>
-      <li>Derrotas: {{ team.defeats }}</li>
-    </ul>  
+    <div class="classification">
+      <h3>Pontos: {{ team.points }}</h3>
+      <h3>Vitórias: {{ team.victories }}</h3>
+      <h3>Empates: {{ team.draws }}</h3>
+      <h3>Derrotas: {{ team.defeats }}</h3>
+    </div>  
   </div>
   <div class="players">
     <div class="add-player">
