@@ -1,5 +1,6 @@
 .container {
   display: flex;
+  justify-content: space-evenly;
   padding: 100px;
 }
 
@@ -30,4 +31,12 @@ img {
 
 .delete {
   color: rgb(228, 56, 56);
+}
+
+.players {
+  width: 400px;
+}
+
+table {
+  width: 100%;
 }

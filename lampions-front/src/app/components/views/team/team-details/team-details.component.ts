@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
+import { Player } from '../../player/player.model';
+import { PlayerService } from '../../player/player.service';
 import { TeamDeleteComponent } from '../team-delete/team-delete.component';
 import { Team } from '../team.model';
 import { TeamService } from '../team.service';
@@ -22,11 +24,20 @@ export class TeamDetailsComponent implements OnInit {
     defeats: 0
   }
 
-  constructor(private service: TeamService, private router: Router, private route: ActivatedRoute, public dialog: MatDialog) { }
+  players: Player[] = [];
+  displayedColumns: string[] = ['shirtNumber', 'name', 'position'];
+
+  constructor(
+    private service: TeamService,
+    private playerService: PlayerService,
+    private router: Router,
+    private route: ActivatedRoute,
+    public dialog: MatDialog) { }
 
   ngOnInit(): void {
     this.team.id = Number(this.route.snapshot.paramMap.get("id")!);
     this.findById();
+    this.findPlayers()
   }
 
   findById(): void {
@@ -47,6 +58,14 @@ export class TeamDetailsComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       this.team = result;
+    });
+  }
+
+  findPlayers(){
+    this.playerService.findAllByTeam(this.team.id!).subscribe((response) => {
+      console.log(response);
+      this.players = response;
+      this.players = this.players.sort((a, b) => (a.shirtNumber < b.shirtNumber) ? -1 : 1);
     });
   }
 }
