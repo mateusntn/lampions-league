@@ -30,7 +30,6 @@ export class PlayerUpdateComponent implements OnInit {
 
   findById(): void {
     this.service.findById(this.player.id!).subscribe((response) => {
-      console.log(response);
       this.player = response;
     });
   }
@@ -45,7 +44,6 @@ export class PlayerUpdateComponent implements OnInit {
   }
 
   changePosition(position: String) {
-    console.log(position);
     this.player.position = position;
   }
 }

@@ -38,7 +38,6 @@ export class PlayerDeleteComponent implements OnInit {
       this.onNoClick();
       this.service.message("Jogador deletado com sucesso!");
     }, err => {
-      console.log(err);
       this.service.message('Não é possível deletar o jogador.')
     });
   }

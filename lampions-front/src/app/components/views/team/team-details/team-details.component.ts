@@ -75,7 +75,6 @@ export class TeamDetailsComponent implements OnInit {
 
   findPlayers(){
     this.playerService.findAllByTeam(this.team.id!).subscribe((response) => {
-      console.log(response);
       this.players = response;
       this.players = this.players.sort((a, b) => (a.shirtNumber < b.shirtNumber) ? -1 : 1);
     });
