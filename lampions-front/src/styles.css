@@ -3,6 +3,21 @@ html {
 	color: #fff;
 }
 
+.edit {
+  color: #fff;
+  
+  margin-left: .5rem;
+}
+
+.delete {
+  color: rgb(228, 56, 56);  
+  margin-left: .5rem;
+}
+
+.align-center {
+  text-align: center !important;
+}
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,

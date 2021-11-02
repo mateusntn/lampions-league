@@ -18,4 +18,22 @@ export class PlayerService {
     const url = `${this.baseUrl}/player/team?team=${id}`
     return this.http.get<Player[]>(url)
   }
+
+  findById(id: Number): Observable<Player> {
+    const url = `${this.baseUrl}/player/${id}`
+    return this.http.get<Player>(url)
+  }
+
+  update(player: Player):Observable<void> {
+    const url = `${this.baseUrl}/player/${player.id}`
+    return this.http.put<void>(url, player)
+  }
+
+  message(str: String): void {
+    this._snack.open(`${str}`, 'OK', {
+      horizontalPosition: 'end',
+      verticalPosition: 'top',
+      duration: 3000
+    })
+  }
 }

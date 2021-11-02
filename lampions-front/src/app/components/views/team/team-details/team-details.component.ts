@@ -25,7 +25,7 @@ export class TeamDetailsComponent implements OnInit {
   }
 
   players: Player[] = [];
-  displayedColumns: string[] = ['shirtNumber', 'name', 'position'];
+  displayedColumns: string[] = ['shirtNumber', 'name', 'position', 'actions'];
 
   constructor(
     private service: TeamService,

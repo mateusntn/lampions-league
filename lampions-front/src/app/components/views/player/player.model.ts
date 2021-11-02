@@ -5,5 +5,5 @@ export interface Player {
   name: String;
   shirtNumber: Number;
   position: String;
-  team: Team;
+  teamId: Number;
 }

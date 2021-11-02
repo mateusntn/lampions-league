@@ -20,17 +20,7 @@ img {
 }
 
 .header a{
-  margin-left: .5rem;
   cursor: pointer;
-}
-
-.edit {
-  color: rgb(206, 173, 24);
-  
-}
-
-.delete {
-  color: rgb(228, 56, 56);
 }
 
 .players {

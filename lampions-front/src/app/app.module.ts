@@ -16,6 +16,7 @@ import { MatSnackBarModule } from "@angular/material/snack-bar";
 import { FormsModule } from '@angular/forms';
 import { MatSortModule } from "@angular/material/sort"
 import { MatDialogModule } from "@angular/material/dialog"
+import { MatSelectModule } from '@angular/material/select';
 
 import { FooterComponent } from './components/template/footer/footer.component';
 import { HomeComponent } from './components/views/home/home.component';
@@ -24,6 +25,7 @@ import { TeamCreateComponent } from './components/views/team/team-create/team-cr
 import { TeamUpdateComponent } from './components/views/team/team-update/team-update.component';
 import { TeamDetailsComponent } from './components/views/team/team-details/team-details.component';
 import { TeamDeleteComponent } from './components/views/team/team-delete/team-delete.component';
+import { PlayerUpdateComponent } from './components/views/player/player-update/player-update.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +37,8 @@ import { TeamDeleteComponent } from './components/views/team/team-delete/team-de
     TeamCreateComponent,
     TeamUpdateComponent,
     TeamDetailsComponent,
-    TeamDeleteComponent
+    TeamDeleteComponent,
+    PlayerUpdateComponent
   ],
   imports: [
     BrowserModule,
@@ -50,7 +53,8 @@ import { TeamDeleteComponent } from './components/views/team/team-delete/team-de
     MatSnackBarModule,
     FormsModule,
     MatSortModule,
-    MatDialogModule
+    MatDialogModule,
+    MatSelectModule
   ],
   providers: [],
   bootstrap: [AppComponent]
