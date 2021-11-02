@@ -2,6 +2,7 @@ package academy.lampions.controller;
 
 import java.net.URI;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import javax.validation.Valid;
 
@@ -19,6 +20,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
+import academy.lampions.dto.PlayerDTO;
 import academy.lampions.entity.Player;
 import academy.lampions.service.PlayerService;
 
@@ -36,15 +38,16 @@ public class PlayerController {
     }
 
     @GetMapping(value = "/{id}")
-    public ResponseEntity<Player> getById(@PathVariable Integer id) {
+    public ResponseEntity<PlayerDTO> getById(@PathVariable Integer id) {
         Player player = service.findById(id);
-        return ResponseEntity.ok().body(player);
+        PlayerDTO playerDTO = new PlayerDTO(player);
+        return ResponseEntity.ok().body(playerDTO);
     }
 
     @GetMapping(value = "/team")
-    public ResponseEntity<List<Player>> getAllByTeam(@RequestParam(value = "team") Integer teamId) {
+    public ResponseEntity<List<PlayerDTO>> getAllByTeam(@RequestParam(value = "team") Integer teamId) {
       System.out.println(teamId);
-      List<Player> players = service.findAllByTeam(teamId);
+      List<PlayerDTO> players = service.findAllByTeam(teamId).stream().map(obj -> new PlayerDTO(obj)).collect(Collectors.toList());
       return ResponseEntity.ok().body(players);
     }
 
