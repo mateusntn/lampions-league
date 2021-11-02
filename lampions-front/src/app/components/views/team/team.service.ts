@@ -19,7 +19,7 @@ export class TeamService {
     return this.http.get<Team[]>(url)
   }
 
-  findById(id: Number): Observable<Team> {
+  findById(id: number): Observable<Team> {
     const url = `${this.baseUrl}/team/${id}`
     return this.http.get<Team>(url)
   }
@@ -29,7 +29,7 @@ export class TeamService {
     return this.http.post<Team>(url, team);
   }
 
-  delete(id: Number): Observable<void>{
+  delete(id: number): Observable<void>{
     const url = `${this.baseUrl}/team/${id}`
     return this.http.delete<void>(url);
   }

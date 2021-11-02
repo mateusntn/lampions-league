@@ -35,6 +35,7 @@ export class TeamUpdateComponent implements OnInit {
   }
 
   update(): void {
+    this.team.points = (this.team.victories * 3) + this.team.draws;
     this.service.update(this.team).subscribe((response) => {
       this.router.navigate(["team"]);
       this.service.message("Time atualizado com sucesso");

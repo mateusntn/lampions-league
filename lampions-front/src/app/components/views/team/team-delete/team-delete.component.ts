@@ -12,7 +12,7 @@ export class TeamDeleteComponent implements OnInit {
 
   constructor(
     public dialogRef: MatDialogRef<TeamDeleteComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: Number,
+    @Inject(MAT_DIALOG_DATA) public data: number,
     private service: TeamService,
     private router: Router) {}
 

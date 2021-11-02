@@ -41,7 +41,7 @@ export class TeamDetailsComponent implements OnInit {
     this.findPlayers()
   }
 
-  counter(i: Number) {
+  counter(i: number) {
     return new Array(i);
   }
 
@@ -66,7 +66,7 @@ export class TeamDetailsComponent implements OnInit {
     });
   }
 
-  openPlayerDialog(id: Number): void {
+  openPlayerDialog(id: number): void {
     const dialogRef = this.dialog.open(PlayerDeleteComponent, {
       width: '250px',
       data: id

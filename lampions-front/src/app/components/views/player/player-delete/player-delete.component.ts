@@ -10,11 +10,11 @@ import { PlayerService } from '../player.service';
 })
 export class PlayerDeleteComponent implements OnInit {
 
-  teamId: Number = 0;
+  teamId: number = 0;
 
   constructor(
     public dialogRef: MatDialogRef<PlayerDeleteComponent>,
-    @Inject(MAT_DIALOG_DATA) public data: Number,
+    @Inject(MAT_DIALOG_DATA) public data: number,
     private service: PlayerService,
     private router: Router) { }
 

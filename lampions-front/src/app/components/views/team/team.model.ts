@@ -1,10 +1,10 @@
 export interface Team {
-  id?: Number;
+  id?: number;
   name: String;
-  titles: Number;
+  titles: number;
   emblem: String;
-  points: Number;
-  victories: Number;
-  draws: Number;
-  defeats: Number;
+  points: number;
+  victories: number;
+  draws: number;
+  defeats: number;
 }

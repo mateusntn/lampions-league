@@ -1,9 +1,9 @@
 import { Team } from "../team/team.model";
 
 export interface Player {
-  id?: Number;
+  id?: number;
   name: String;
-  shirtNumber: Number;
+  shirtNumber: number;
   position: String;
-  teamId: Number;
+  teamId: number;
 }

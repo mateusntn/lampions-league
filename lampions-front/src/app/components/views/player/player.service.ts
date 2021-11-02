@@ -14,12 +14,12 @@ export class PlayerService {
 
   constructor(private http: HttpClient, private _snack: MatSnackBar) { }
 
-  findAllByTeam(id: Number):Observable<Player[]> {
+  findAllByTeam(id: number):Observable<Player[]> {
     const url = `${this.baseUrl}/player/team?team=${id}`
     return this.http.get<Player[]>(url)
   }
 
-  findById(id: Number): Observable<Player> {
+  findById(id: number): Observable<Player> {
     const url = `${this.baseUrl}/player/${id}`
     return this.http.get<Player>(url)
   }
@@ -34,7 +34,7 @@ export class PlayerService {
     return this.http.put<void>(url, player)
   }
 
-  delete(id: Number): Observable<void>{
+  delete(id: number): Observable<void>{
     const url = `${this.baseUrl}/player/${id}`
     return this.http.delete<void>(url);
   }

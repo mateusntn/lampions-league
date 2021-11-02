@@ -26,6 +26,7 @@ export class TeamCreateComponent implements OnInit {
   }
 
   create(): void {
+    this.team.points = Number((this.team.victories * 3) + this.team.draws);
     this.service.create(this.team).subscribe((response) => {
       this.router.navigate(['team'])
       this.service.message('Time cadastrado com sucesso!');
