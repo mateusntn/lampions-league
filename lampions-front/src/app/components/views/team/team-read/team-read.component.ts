@@ -22,6 +22,7 @@ export class TeamReadComponent implements OnInit {
     this.service.findAll().subscribe((response) => {
       console.log(response);
       this.teams = response;
+      this.teams = this.teams.sort((a, b) => (a.points > b.points) ? -1 : 1);
     });
   }
 }
