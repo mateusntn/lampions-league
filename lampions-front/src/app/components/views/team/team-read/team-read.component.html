@@ -3,7 +3,7 @@
     <h1>Classificação</h1>
   </div>
 
-  <button class="mat-elevation-z8" routerLink="/team/create" mat-stroked-button> Cadastrar Time </button>
+  <button class="mat-elevation-z8" routerLink="/team/create" mat-stroked-button style="color: #05c46b;"> Cadastrar Time </button>
 
 
   <table class="mat-elevation-z8 table" mat-table [dataSource]="teams">
@@ -36,7 +36,7 @@
     <ng-container matColumnDef="actions">
       <th class="mat-header align-center" mat-header-cell *matHeaderCellDef>Detalhes</th>
       <td mat-cell class="align-center" *matCellDef="let row">
-        <a class="info" routerLink="/team/details/{{ row.id }}">
+        <a class="info" routerLink="/team/details/{{ row.id }}" style="color: #fff;">
           <i class="material-icons">description</i>
         </a>
       </td>

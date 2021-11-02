@@ -3,6 +3,7 @@
     flex-direction: column;
     align-items: center;
     padding: 1.4rem;
+    margin-bottom: 100px;
 }
 
 .content button {
