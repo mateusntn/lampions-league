@@ -43,3 +43,9 @@ img {
 .info {
   color: teal;
 }
+
+.emblem {
+  display: flex;
+  align-items: center;
+  margin-top: 10px !important;
+}
