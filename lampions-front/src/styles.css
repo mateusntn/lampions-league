@@ -5,12 +5,13 @@ html {
 
 .edit {
   color: #fff;
-  
+  cursor: pointer;
   margin-left: .5rem;
 }
 
 .delete {
-  color: rgb(228, 56, 56);  
+  color: rgb(228, 56, 56);
+  cursor: pointer; 
   margin-left: .5rem;
 }
 

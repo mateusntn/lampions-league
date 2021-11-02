@@ -26,6 +26,7 @@ import { TeamUpdateComponent } from './components/views/team/team-update/team-up
 import { TeamDetailsComponent } from './components/views/team/team-details/team-details.component';
 import { TeamDeleteComponent } from './components/views/team/team-delete/team-delete.component';
 import { PlayerUpdateComponent } from './components/views/player/player-update/player-update.component';
+import { PlayerDeleteComponent } from './components/views/player/player-delete/player-delete.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { PlayerUpdateComponent } from './components/views/player/player-update/p
     TeamUpdateComponent,
     TeamDetailsComponent,
     TeamDeleteComponent,
-    PlayerUpdateComponent
+    PlayerUpdateComponent,
+    PlayerDeleteComponent
   ],
   imports: [
     BrowserModule,

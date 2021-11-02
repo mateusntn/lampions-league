@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { MatDialog } from '@angular/material/dialog';
 import { ActivatedRoute, Router } from '@angular/router';
+import { PlayerDeleteComponent } from '../../player/player-delete/player-delete.component';
 import { Player } from '../../player/player.model';
 import { PlayerService } from '../../player/player.service';
 import { TeamDeleteComponent } from '../team-delete/team-delete.component';
@@ -58,6 +59,17 @@ export class TeamDetailsComponent implements OnInit {
 
     dialogRef.afterClosed().subscribe(result => {
       this.team = result;
+    });
+  }
+
+  openPlayerDialog(id: Number): void {
+    const dialogRef = this.dialog.open(PlayerDeleteComponent, {
+      width: '250px',
+      data: id
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      this.findPlayers();
     });
   }
 

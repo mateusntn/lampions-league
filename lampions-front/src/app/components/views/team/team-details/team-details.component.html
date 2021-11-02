@@ -41,7 +41,7 @@
           <a class="edit" routerLink="/player/update/{{ row.id }}">
             <i class="material-icons">edit</i>
           </a>
-          <a class="delete" routerLink="/team">
+          <a class="delete" (click)="openPlayerDialog(row.id)">
             <i class="material-icons">delete</i>
           </a>
         </td>
