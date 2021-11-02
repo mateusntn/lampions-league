@@ -74,3 +74,8 @@ table {
   align-items: center;
   width: 40%;
 }
+
+th {
+  font-size: 18px;
+  padding-top: 18px !important;
+}
