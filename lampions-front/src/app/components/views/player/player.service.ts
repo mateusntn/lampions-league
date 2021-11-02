@@ -24,6 +24,11 @@ export class PlayerService {
     return this.http.get<Player>(url)
   }
 
+  create(player: Player): Observable<Player>{
+    const url = `${this.baseUrl}/player?team=${player.teamId}`
+    return this.http.post<Player>(url, player);
+  }
+
   update(player: Player):Observable<void> {
     const url = `${this.baseUrl}/player/${player.id}`
     return this.http.put<void>(url, player)

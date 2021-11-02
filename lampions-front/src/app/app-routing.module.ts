@@ -1,6 +1,7 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './components/views/home/home.component';
+import { PlayerCreateComponent } from './components/views/player/player-create/player-create.component';
 import { PlayerUpdateComponent } from './components/views/player/player-update/player-update.component';
 import { TeamCreateComponent } from './components/views/team/team-create/team-create.component';
 import { TeamDetailsComponent } from './components/views/team/team-details/team-details.component';
@@ -31,6 +32,10 @@ const routes: Routes = [
   {
     path: 'player/update/:id',
     component: PlayerUpdateComponent
+  },
+  {
+    path: 'player/create/:id',
+    component: PlayerCreateComponent
   }
 ];
 

@@ -1,0 +1,24 @@
+<form>
+  <h1>Criar Jogador</h1>
+
+  <mat-form-field  appearance="outline" class="form">
+    <mat-label>Nome</mat-label>
+    <input matInput [(ngModel)]="player.name" type="text" name="name" placeholder="Ex. Senac F.C">
+  </mat-form-field>
+  <mat-form-field class="form"  appearance="outline">
+    <mat-label>Número da camisa</mat-label>
+    <input matInput [(ngModel)]="player.shirtNumber" type="number" name="shirtNumber">
+  </mat-form-field>
+  <mat-form-field  class="form" appearance="outline">
+    <mat-label>Selecione a posição</mat-label>
+    <mat-select name="position">
+      <mat-option *ngFor="let p of positions" (click)="changePosition(p)" [value]="p">{{p}}</mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <div class="buttons">
+    <button (click)="goBack()" class="mat-elevation-z8" mat-stroked-button> VOLTAR </button>
+    <button  class="mat-elevation-z8" (click)="create()" mat-stroked-button style="background-color: #05c46b;"> CRIAR </button>
+  </div>
+
+</form>

@@ -18,8 +18,13 @@
     </ul>  
   </div>
   <div class="players">
+    <div class="add-player">
+      <a class="edit" routerLink="/player/create/{{ team.id }}">
+        <i class="material-icons">add_circle_outline</i>
+        <span>Adicionar Jogador</span>
+      </a>
+    </div>
     <table mat-table [dataSource]="players" class="mat-elevation-z8">
-
       <ng-container matColumnDef="shirtNumber">
         <th mat-header-cell *matHeaderCellDef> Número </th>
         <td mat-cell *matCellDef="let row"> {{row.shirtNumber}} </td>
