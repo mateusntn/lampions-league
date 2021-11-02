@@ -1,11 +1,11 @@
 package academy.lampions.entity.enums;
 
 public enum PositionEnum {
-    GK("goleiro"),
-    CB("zagueiro"),
-    SB("lateral"),
-    CM("meia"),
-    ST("atacante");
+    Goleiro("goleiro"),
+    Zagueiro("zagueiro"),
+    Lateral("lateral"),
+    Meia("meia"),
+    Atacante("atacante");
 
     private String name;
 

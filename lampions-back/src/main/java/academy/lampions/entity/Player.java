@@ -54,5 +54,6 @@ public class Player implements Serializable{
         this.name = player.getName();
         this.shirtNumber = player.getShirtNumber();
         this.position = player.getPosition();
+        this.team = player.getTeam();
     }
 }

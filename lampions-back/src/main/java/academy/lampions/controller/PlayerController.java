@@ -1,6 +1,7 @@
 package academy.lampions.controller;
 
 import java.net.URI;
+import java.util.ArrayList;
 import java.util.List;
 
 import javax.validation.Valid;
@@ -15,6 +16,7 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 
@@ -40,10 +42,17 @@ public class PlayerController {
         return ResponseEntity.ok().body(player);
     }
 
+    @GetMapping(value = "/team")
+    public ResponseEntity<List<Player>> getAllByTeam(@RequestParam(value = "team") Integer teamId) {
+      System.out.println(teamId);
+      List<Player> players = service.findAllByTeam(teamId);
+      return ResponseEntity.ok().body(players);
+    }
+
     @PostMapping
-    public ResponseEntity<Player> post(@Valid @RequestBody Player player) {
-        service.create(player);
-        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/{id}").buildAndExpand(player.getId()).toUri();
+    public ResponseEntity<Player> post(@RequestParam(value = "team")Integer teamId, @Valid @RequestBody Player player) {
+        Player newPlayer = service.create(teamId, player);
+        URI uri = ServletUriComponentsBuilder.fromCurrentRequest().path("/player/{id}").buildAndExpand(newPlayer.getId()).toUri();
         return ResponseEntity.created(uri).build();
     }
 
