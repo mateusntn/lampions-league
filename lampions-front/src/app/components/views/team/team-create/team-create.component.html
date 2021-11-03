@@ -6,6 +6,10 @@
     <input matInput [(ngModel)]="team.name" type="text" name="name" placeholder="Ex. Senac F.C">
   </mat-form-field>
   <mat-form-field class="form" appearance="outline">
+    <mat-label>Escudo</mat-label>
+    <input matInput [(ngModel)]="team.emblem" type="text" name="emblem">
+  </mat-form-field>
+  <mat-form-field class="form" appearance="outline">
     <mat-label>Quantidade de Títulos</mat-label>
     <input matInput [(ngModel)]="team.titles" type="number" name="titles">
   </mat-form-field>
